@@ -2,12 +2,15 @@
 
 require_once "classes/CsvToDb.php";
 
+$sCurrentDate = date("ymd");
+
 $sFileName = "data.csv";
 
 $oCsvToDb = new CsvToDb($sFileName);
+$oCsvToDb->sTableName = "ims.fault_reply";
 
 $sContents = $oCsvToDb->getContents();
 
 $aCsvRows = $oCsvToDb->parseCsv($sContents);
 
-var_Dump($aCsvRows);
+$bWritten = $oCsvToDb->writeArrayToDb($aCsvRows);
