@@ -1,2 +1,2 @@
 # phpcsvtodb
-Parse CSV contents and insert into d
+Parse CSV contents and insert into db
